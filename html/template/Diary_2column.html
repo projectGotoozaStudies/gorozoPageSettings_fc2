@@ -1,1 +1,454 @@
-
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="author" content="<%author_name>" />
+  <!--index_area--><meta name="description" content="<%introduction>" /><!--/index_area-->
+  
+  <link rel="alternate" type="application/rss+xml" href="<%url>?xml" title="RSS" />
+  <link rel="stylesheet" href="<%css_link>" />
+  <link rel="start" href="<%url>" />
+  <!--prevpage--><link rel="prev" href="<%prevpage_url>"><!--/prevpage-->
+  <!--nextpage--><link rel="next" href="<%nextpage_url>"><!--/nextpage-->
+  <!--preventry--><link rel="next" href="<%preventry_url>"><!--/preventry-->
+  <!--nextentry--><link rel="prev" href="<%nextentry_url>"><!--/nextentry-->
+  
+  <script type="text/javascript" src="http://static.fc2.com/js/lib/jquery-1.10.2.min.js"></script>
+  
+  <script type="text/javascript">
+  /**
+  * jquery.matchHeight-min.js master
+  * http://brm.io/jquery-match-height/
+  * License: MIT
+  */
+  (function(c){var n=-1,f=-1,g=function(a){return parseFloat(a)||0},r=function(a){var b=null,d=[];c(a).each(function(){var a=c(this),k=a.offset().top-g(a.css("margin-top")),l=0<d.length?d[d.length-1]:null;null===l?d.push(a):1>=Math.floor(Math.abs(b-k))?d[d.length-1]=l.add(a):d.push(a);b=k});return d},p=function(a){var b={byRow:!0,property:"height",target:null,remove:!1};if("object"===typeof a)return c.extend(b,a);"boolean"===typeof a?b.byRow=a:"remove"===a&&(b.remove=!0);return b},b=c.fn.matchHeight=
+  function(a){a=p(a);if(a.remove){var e=this;this.css(a.property,"");c.each(b._groups,function(a,b){b.elements=b.elements.not(e)});return this}if(1>=this.length&&!a.target)return this;b._groups.push({elements:this,options:a});b._apply(this,a);return this};b._groups=[];b._throttle=80;b._maintainScroll=!1;b._beforeUpdate=null;b._afterUpdate=null;b._apply=function(a,e){var d=p(e),h=c(a),k=[h],l=c(window).scrollTop(),f=c("html").outerHeight(!0),m=h.parents().filter(":hidden");m.each(function(){var a=c(this);
+  a.data("style-cache",a.attr("style"))});m.css("display","block");d.byRow&&!d.target&&(h.each(function(){var a=c(this),b=a.css("display");"inline-block"!==b&&"inline-flex"!==b&&(b="block");a.data("style-cache",a.attr("style"));a.css({display:b,"padding-top":"0","padding-bottom":"0","margin-top":"0","margin-bottom":"0","border-top-width":"0","border-bottom-width":"0",height:"100px"})}),k=r(h),h.each(function(){var a=c(this);a.attr("style",a.data("style-cache")||"")}));c.each(k,function(a,b){var e=c(b),
+  f=0;if(d.target)f=d.target.outerHeight(!1);else{if(d.byRow&&1>=e.length){e.css(d.property,"");return}e.each(function(){var a=c(this),b=a.css("display");"inline-block"!==b&&"inline-flex"!==b&&(b="block");b={display:b};b[d.property]="";a.css(b);a.outerHeight(!1)>f&&(f=a.outerHeight(!1));a.css("display","")})}e.each(function(){var a=c(this),b=0;d.target&&a.is(d.target)||("border-box"!==a.css("box-sizing")&&(b+=g(a.css("border-top-width"))+g(a.css("border-bottom-width")),b+=g(a.css("padding-top"))+g(a.css("padding-bottom"))),
+  a.css(d.property,f-b+"px"))})});m.each(function(){var a=c(this);a.attr("style",a.data("style-cache")||null)});b._maintainScroll&&c(window).scrollTop(l/f*c("html").outerHeight(!0));return this};b._applyDataApi=function(){var a={};c("[data-match-height], [data-mh]").each(function(){var b=c(this),d=b.attr("data-mh")||b.attr("data-match-height");a[d]=d in a?a[d].add(b):b});c.each(a,function(){this.matchHeight(!0)})};var q=function(a){b._beforeUpdate&&b._beforeUpdate(a,b._groups);c.each(b._groups,function(){b._apply(this.elements,
+  this.options)});b._afterUpdate&&b._afterUpdate(a,b._groups)};b._update=function(a,e){if(e&&"resize"===e.type){var d=c(window).width();if(d===n)return;n=d}a?-1===f&&(f=setTimeout(function(){q(e);f=-1},b._throttle)):q(e)};c(b._applyDataApi);c(window).bind("load",function(a){b._update(!1,a)});c(window).bind("resize orientationchange",function(a){b._update(!0,a)})})(jQuery);
+  
+  $(function(){
+    $('.side_plugin').matchHeight();
+  });
+  
+  </script>
+  
+  <!--[if lt IE 9]>
+  <script src="http://static.fc2.com/sh_js/html5shiv.js"></script>
+  <![endif]-->
+  
+  <title><!--not_index_area--><%sub_title> - <!--/not_index_area--><%blog_name></title>
+  
+</head>
+<body class="<!--index_area-->top_page<!--/index_area-->">
+  
+  <header id="header">
+    <div class="inner">
+      <h1><a href="<%url>"><%blog_name></a></h1>
+      <p><%introduction></p>
+    </div>
+  </header>
+  <!-- / header -->
+  
+  <div id="container" class="cf">
+    <section id="main">
+      <div class="inner">
+        <!--not_titlelist_area-->
+        <!--not_search_area-->
+        <!--topentry-->
+  
+        <article>
+          <div class="entry">
+            <div class="entry_status">
+              <!--topentry_isnew-->NEW<!--/topentry_isnew-->
+              <p class="entry_date"><%topentry_year>/<%topentry_month>/<%topentry_day></p>
+            </div>
+            <h2>
+              <!--not_permanent_area--><a href="<%topentry_link>"><!--/not_permanent_area--><%topentry_title>
+              <!--not_permanent_area--></a><!--/not_permanent_area-->
+            </h2>
+            <%topentry_body>
+          </div>
+        </article>
+        <!-- / article -->
+        
+        <!--more_link-->
+        <p class="read_more">
+          <a href="<%topentry_link>#more"><%template_extend></a>
+        </p>
+        <!--/more_link-->
+        <!--more-->
+        <div class="entry_more">
+          <%topentry_more>
+        </div>
+        <!--/more-->
+        <!-- / read_more -->
+        
+        <div class="entry_footer cf">
+          <ul class="entry_comment cf">
+            <!--allow_comment-->
+            <li>コメント : <a href="<%topentry_link>#comment-top" class="comment" title="<%template_post_comment>"><%topentry_comment_num></a></li>
+            <!--/allow_comment-->
+            <!--allow_tb-->
+            <li>トラックバック : <a href="<%topentry_link>#trackback-top" class="track" title="<%template_trackback>"><i class="track_icon tpl_icon"></i><%topentry_tb_num></a></li>
+            <!--/allow_tb-->
+          </ul>
+          <ul class="entry_category cf">
+            <li>カテゴリ : <a href="<%topentry_category_link>" class="category" title="<%template_view_category>"><%topentry_category></a></li>
+            <!--community-->
+            <li><%template_theme> : <a href="<%topentry_thread_link>"><%topentry_thread_title></a></li>
+            <li><%template_genre> : <a href="<%topentry_community_janrelink>"><%topentry_community_janrename></a></li>
+            <!--/community-->
+          </ul>
+        </div>
+        <!-- / entry_footer -->
+        
+        <!--/topentry-->
+        <!--/not_titlelist_area-->
+        <!--/not_search_area-->
+  
+      </div>
+      <!-- / inner -->
+  
+      <!--comment_area-->
+      <div class="comment_area sub_contents">
+        <div class="inner">
+          <h2 id="comment-top" class="sub_contents_title"><%template_comment></h2>
+          
+          <!--comment-->
+            <h3 id="comment<%comment_no>" class="sub_contents_title"><%comment_title></h3>
+            <div class="sub_contents_body"><%comment_body></div>
+            <p class="sub_contents_footer">
+              <span class="date"><%comment_year>/<%comment_month>/<%comment_day>&nbsp;<%comment_hour>:<%comment_minute>&nbsp;</span>
+              <span class="author">by&nbsp;<%comment_mail+name>&nbsp;</span>
+              <span class="uri"><%comment_url+str>&nbsp;</span>
+              <span class="edit"><a href="<%comment_edit_link>" title="<%template_edit_comment>"><%template_edit></a></span>
+            </p>
+          <!--/comment-->
+          
+          <form action="./" method="post" name="comment_form" id="comment_form">
+            <div class="comment_form_wrap cf">
+              <div class="comment_form_left">
+                <div class="form_title">
+                  <input type="hidden" name="mode" value="regist" />
+                  <input type="hidden" name="comment[no]" value="<%pno>" />
+                  <label for="name"><%template_name></label>
+                </div>
+                <div class="form_input">
+                  <input id="name" class="input_text" type="text" name="comment[name]" size="30" value="<%cookie_name>" />
+                </div>
+                <div class="form_title">
+                  <label for="subject"><%template_title></label>
+                </div>
+                <div class="form_input">
+                  <input id="subject" class="input_text" name="comment[title]" type="text" size="30" value="No title" onblur="if(this.value == '') this.value='No title';" onfocus="if(this.value == 'No title') this.value='';" />
+                </div>
+                <div class="form_title">
+                  <label for="mail"><%template_address></label>
+                </div>
+                <div class="form_input">
+                  <input id="mail" class="input_text" type="text" name="comment[mail]" size="30" value="<%cookie_mail>" />
+                </div>
+                <div class="form_title">
+                  <label for="url">URL</label>
+                </div>
+                <div class="form_input">
+                  <input id="url" class="input_text" type="text" name="comment[url]" size="30" value="<%cookie_url>" />
+                </div>
+  
+                <div class="form_title">
+                  <label for="pass"><%template_password></label>
+                </div>
+                <div class="form_input">
+                  <input id="pass" class="input_text" type="password" name="comment[pass]" size="20" />
+                </div>
+                <div class="form_title himitu_title">
+                  <%template_private>
+                </div>
+                <div class="form_input">
+                  <input id="himitu" type="checkbox" name="comment[himitu]" /><label class="himitu_label" for="himitu"><%template_private_check></label>
+                </div>
+              </div>
+              <div class="comment_form_right">
+                <div class="form_title">
+                  <label for="comment"><%template_body></label>
+                </div>
+                <div class="comment_tool_wrap">
+                  <script type="text/javascript" src="<%template_comment_js>"></script>
+                </div>
+                <div class="form_textarea">
+                  <textarea id="comment" cols="20" rows="5" name="comment[body]"></textarea>
+                </div>
+                <div class="form_btn">
+                  <input type="submit" value="<%template_send>" />
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!--/comment_area-->
+  
+      <!--edit_area-->
+      <div id="ed" class="comment_area sub_contents">
+        <div class="inner">
+          <h2 id="comment-top" class="sub_contents_title"><%template_edit_comment></h2>
+          <form action="./" method="post" name="comment_form" id="comment_form">
+            <div class="comment_form_wrap cf">
+              <div class="comment_form_left">
+                <div class="form_title">
+                  <input type="hidden" name="mode" value="edit" />
+                  <input type="hidden" name="mode2" value="edited" />
+                  <input type="hidden" name="edit[rno]" value="<%eno>" />
+                  <label for="name"><%template_name></label>
+                </div>
+                <div class="form_input">
+                  <input id="edit[name]" class="input_text" type="text" name="edit[name]" size="30" value="<%edit_name>" />
+                </div>
+                <div class="form_title">
+                  <label for="subject"><%template_title></label>
+                </div>
+                <div class="form_input">
+                  <input id="subject" class="input_text" type="text" name="edit[title]" size="30" value="<%edit_title>" />
+                </div>
+                <div class="form_title">
+                  <label for="mail"><%template_address></label>
+                </div>
+                <div class="form_input">
+                  <input id="mail" class="input_text" type="text" name="edit[mail]" size="30" value="<%edit_mail>" />
+                </div>
+                <div class="form_title">
+                  <label for="url">URL</label>
+                </div>
+                <div class="form_input">
+                  <input id="url" class="input_text" type="text" name="edit[url]" size="30" value="<%edit_url>" />
+                </div>
+                <div class="form_title">
+                  <label for="pass"><%template_password></label>
+                </div>
+                <div class="form_input">
+                  <input id="pass" class="input_text" type="password" name="edit[pass]" size="20" />
+                </div>
+                <div class="form_title">
+                  <%template_private>
+                </div>
+                <div class="form_input">
+                  <input id="himitu" type="checkbox" name="edit[himitu]" /><label class="himitu_label" for="himitu"><%template_private_check></label>
+                </div>
+              </div>
+  
+              <div class="comment_form_right">
+                <div class="form_title">
+                  <label for="comment"><%template_body></label>
+                </div>
+                <div class="comment_tool_wrap">
+                  <script type="text/javascript" src="<%template_comment_js>"></script>
+                </div>
+                <div class="form_textarea">
+                  <textarea id="comment" cols="50" rows="5" name="edit[body]"><%edit_body></textarea>
+                </div>
+                <div class="form_btn edit_comment_btn">
+                  <input type="submit" value="<%template_send>" />
+                  <input type="submit" name="edit[delete]" value="<%template_delete>" class="delete_btn" />
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div><!--/content-->
+      <!--/edit_area-->
+      
+      <!--trackback_area-->
+      <div class="trackback_area sub_contents">
+        <div class="inner">
+          <h2 id="trackback-top" class="sub_contents_title"><%template_trackback></h2>
+          <p class="trackback_link">
+            <a href="javascript:window.location.replace('http://blog.fc2.com/?url='+encodeURIComponent(window.location.href));" title="<%template_trackback_this>"><%template_trackback_this></a>
+          </p>
+          <input class="trackback_input" onfocus="this.select()" value="<%trackback_url>" readonly="readOnly" />
+    
+          <!--trackback-->
+            <h3 id="trackback<%tb_no>" class="sub_title">
+              <a href="<%tb_url>" title="<%template_trackback>">
+                <%tb_title>
+              </a>
+            </h3>
+            <div class="sub_contents_body">
+              <%tb_excerpt>
+            </div>
+            <p class="sub_contents_footer">
+              <span><%tb_year>/<%tb_month>/<%tb_day>&nbsp;<%tb_hour>:<%tb_minute>&nbsp;</span>
+              <span>by&nbsp;<a href="<%tb_url>"><%tb_blog_name></a></span>
+            </p>
+          <!--/trackback-->
+        </div>
+      </div>
+      <!--/trackback_area-->
+      
+      <!--not_permanent_area-->
+      <div class="paging">
+        <ul class="inner cf">
+          
+          <li class="prev">
+            <!--prevpage-->
+            <a href="<%prevpage_url>">前のページ</a>
+            <!--/prevpage-->&nbsp;
+          </li>
+          
+          <li class="blog_top">
+            <!--date_area-->
+            <a href="<%url>">記事一覧</a>
+            <!--/date_area-->
+          </li>
+          <li class="blog_top">
+            <!--edit_area-->
+            <a href="<%url>">記事一覧</a>
+            <!--/edit_area-->
+          </li>
+          <li class="blog_top">
+            <!--category_area-->
+            <a href="<%url>">記事一覧</a>
+            <!--/category_area-->
+          </li>
+          <li class="blog_top">
+            <!--tag_area-->
+            <a href="<%url>">記事一覧</a>
+            <!--/tag_area-->
+          </li>
+          <li class="blog_top">
+            <!--trackback_area-->
+            <a href="<%url>">記事一覧</a>
+            <!--/trackback_area-->
+          </li>
+          
+          <li class="next">&nbsp;
+            <!--nextpage-->
+            <a href="<%nextpage_url>">次のページ</a>
+            <!--/nextpage-->
+          </li>
+          
+        </ul>
+      </div>
+      <!--/not_permanent_area-->
+      
+      <!--permanent_area-->
+      <div class="entry_paging">
+        <ul class="inner cf">
+          
+          <li class="prev">
+            <!--preventry-->
+            <a href="<%preventry_url>">前の記事</a>
+            <!--/preventry-->&nbsp;
+          </li>
+          
+          <li class="blog_top">
+            <!--date_area-->
+            <a href="<%url>">記事一覧</a>
+            <!--/date_area-->
+          </li>
+          <li class="blog_top">
+            <!--edit_area-->
+            <a href="<%url>">記事一覧</a>
+            <!--/edit_area-->
+          </li>
+          <li class="blog_top">
+            <!--category_area-->
+            <a href="<%url>">記事一覧</a>
+            <!--/category_area-->
+          </li>
+          <li class="blog_top">
+            <!--tag_area-->
+            <a href="<%url>">記事一覧</a>
+            <!--/tag_area-->
+          </li>
+          <li class="blog_top">
+            <!--trackback_area-->
+            <a href="<%url>">記事一覧</a>
+            <!--/trackback_area-->
+          </li>
+          
+          <li class="next">&nbsp;
+            <!--nextentry-->
+            <a href="<%nextentry_url>">次の記事</a>
+            <!--/nextentry-->
+          </li>
+          
+        </ul>
+      </div>
+      <!--/permanent_area-->
+      <!-- / paging -->
+  
+    </section>
+    <!-- / section -->
+    
+    <section id="side">
+      <div class="inner cf">
+        <!--plugin-->
+          <!--plugin_first-->
+          <div class="side_plugin">
+            <div class="plugin_content">
+              <h2 class="plugin_header"><%plugin_first_title></h2>
+              <!--plugin_first_description-->
+                <div class="plugin_body"><%plugin_first_description></div>
+              <!--/plugin_first_description-->
+                <div class="plugin_body"><%plugin_first_content></div>
+              <!--plugin_first_description2-->
+                <div class="plugin_body"><%plugin_first_description2></div>
+              <!--/plugin_first_description2-->
+            </div>
+          </div>
+          <!--/plugin_first-->
+  
+          <!--plugin_second-->
+          <div class="side_plugin">
+            <div class="plugin_content">
+              <h2 class="plugin_header"><%plugin_second_title></h2>
+              <!--plugin_second_description-->
+                <div class="plugin_body"><%plugin_second_description></div>
+              <!--/plugin_second_description-->
+                <div class="plugin_body"><%plugin_second_content></div>
+              <!--plugin_second_description2-->
+                <div class="plugin_body"><%plugin_second_description2></div>
+              <!--/plugin_second_description2-->
+            </div>
+          </div>
+          <!--/plugin_second-->
+  
+          <!--plugin_third-->
+          <div class="side_plugin">
+            <div class="plugin_content">
+              <h2 class="plugin_header"><%plugin_third_title></h2>
+              <!--plugin_third_description-->
+                <div class="plugin_body"><%plugin_third_description></div>
+              <!--/plugin_third_description-->
+                <div class="plugin_body"><%plugin_third_content></div>
+              <!--plugin_third_description2-->
+                <div class="plugin_body"><%plugin_third_description2></div>
+              <!--/plugin_third_description2-->
+            </div>
+          </div>
+          <!--/plugin_third-->
+        <!--/plugin-->
+      </div>
+    </section>
+  
+  </div>
+  
+  <footer id="footer">
+    
+    <div class="footer_info">
+      <!-- Don't delete -->
+      <p class="ad"><%ad> <%ad2></p>
+      <!-- / Don't delete -->
+      <p class="copyrights">Copyright &copy; <%blog_name> All Rights Reserved.<span class="powered">Powered by <%template_fc2blog></span></p>
+    </div>
+    <!-- / footer_info -->
+    
+  </footer>
+  <!-- / footer -->
+  
+</body>
+</html>
